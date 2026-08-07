@@ -1,0 +1,29 @@
+:root {
+  --ink: #1f1c1a;
+  --paper: #f4f1ed;
+  --accent: #c18f5b;
+  --accent-2: #7f9f9a;
+  --gold: #f1d88c;
+  --danger: #c35b5b;
+  --panel: #fbf7f2;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --pixel: 6px;
+  --px: 4px;
+  --font-title: "Press Start 2P", monospace;
+  --font-body: "Courier Prime", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top left, #fbf7f0 0%, #f1ece4 55%, #e8dfd4 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+.hidden {
+  display: none;
+}

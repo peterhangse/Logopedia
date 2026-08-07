@@ -1,0 +1,31 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(27, 27, 27, 0.6);
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  background: #fff;
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 24px;
+  width: min(420px, 90vw);
+}
+
+.card-title {
+  font-family: var(--font-title);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.card-body {
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+}

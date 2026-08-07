@@ -1,0 +1,95 @@
+.panel-title {
+  font-family: var(--font-title);
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.goal {
+  display: grid;
+  gap: 8px;
+}
+
+.goal-bar {
+  height: 14px;
+  border: 2px solid var(--ink);
+  background: #f2e8d5;
+}
+
+.goal-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+}
+
+.goal-text {
+  font-size: 11px;
+}
+
+.status {
+  font-size: 11px;
+}
+
+.ui-layer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 260px 1fr 320px;
+  grid-template-rows: 140px 1fr 140px;
+  gap: 16px;
+  padding: 16px;
+  z-index: 3;
+}
+
+.hud {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  background: #fdfbf7;
+  border: 2px solid var(--ink);
+  padding: 12px;
+}
+
+.patient-zone {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background: #ffffff;
+  border: 2px solid var(--ink);
+  padding: 16px;
+}
+
+.prep-area {
+  grid-column: 3;
+  grid-row: 2;
+  align-self: start;
+  background: #ffffff;
+  border: 2px solid var(--ink);
+  padding: 10px;
+}
+
+.exercise-buttons {
+  grid-column: 2;
+  grid-row: 3;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 22px;
+}
+
+.btn {
+  border: 2px solid var(--ink);
+  background: #ffffff;
+  padding: 8px 10px;
+  font-family: var(--font-title);
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.btn.ghost {
+  background: #ffffff;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

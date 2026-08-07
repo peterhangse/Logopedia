@@ -1,0 +1,35 @@
+.office.minimalist {
+  position: relative;
+  width: min(1200px, 96vw);
+  height: min(720px, 80vh);
+  border: 3px solid var(--ink);
+  background: #f7f5f1;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.office.minimalist .office-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, #faf8f4 0%, #f1ebe2 70%, #e8ddcf 100%),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.03) 0 12px, transparent 12px 24px);
+}
+
+.office.minimalist .desk-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 190px;
+  height: 4px;
+  background: var(--ink);
+  opacity: 0.35;
+}
+
+.office.minimalist .zone-title {
+  font-family: var(--font-title);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}

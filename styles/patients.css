@@ -1,0 +1,266 @@
+.queue {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.patient {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  padding: 26px 10px 10px;
+  border: 3px solid var(--ink);
+  background: #fffdf7;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--ink);
+  animation: idle-bob 2.4s ease-in-out infinite;
+  image-rendering: pixelated;
+}
+
+.patient .avatar,
+.patient .body,
+.patient .hair,
+.patient .bubble {
+  image-rendering: pixelated;
+}
+
+.patient .avatar {
+  width: 48px;
+  height: 56px;
+  background: linear-gradient(180deg, #f0c7a6 0%, #e3b08c 100%);
+  border: 3px solid var(--ink);
+  position: relative;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.patient .avatar.skin1 {
+  background: linear-gradient(180deg, #f2cdb3 0%, #e7b893 100%);
+}
+
+.patient .avatar.skin2 {
+  background: linear-gradient(180deg, #d9a57d 0%, #b47c54 100%);
+}
+
+.patient .avatar.skin3 {
+  background: linear-gradient(180deg, #f3d9c5 0%, #d9b29b 100%);
+}
+
+.patient .avatar::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  width: 10px;
+  height: 8px;
+  background: #2f2a26;
+  box-shadow: 16px 0 0 #2f2a26;
+  animation: blink 4.5s steps(1) infinite;
+}
+
+.patient .avatar::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 12px;
+  width: 20px;
+  height: 6px;
+  background: #b66b6b;
+  animation: talk 0.5s steps(2) infinite;
+}
+
+.patient .hair {
+  position: absolute;
+  top: -4px;
+  left: 4px;
+  width: 36px;
+  height: 14px;
+  border: 3px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.patient .hair.hair1 {
+  background: #5b3b2e;
+}
+
+.patient .hair.hair2 {
+  background: #2f2a26;
+}
+
+.patient .hair.hair3 {
+  background: #7a5a3a;
+}
+
+.patient .hair::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  width: 28px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.patient .body {
+  position: absolute;
+  bottom: -20px;
+  left: 6px;
+  width: 32px;
+  height: 22px;
+  background: #b6c3c9;
+  border: 3px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.patient .body.outfit1 {
+  background: linear-gradient(180deg, #b6c3c9 0%, #93a5ac 100%);
+}
+
+.patient .body.outfit2 {
+  background: linear-gradient(180deg, #c9b6c3 0%, #a892ab 100%);
+}
+
+.patient .body.outfit3 {
+  background: linear-gradient(180deg, #c3c9b6 0%, #9aa58c 100%);
+}
+
+.patient .arms {
+  position: absolute;
+  bottom: -10px;
+  left: 2px;
+  width: 40px;
+  height: 8px;
+  border-top: 3px solid var(--ink);
+  animation: wave 1.8s ease-in-out infinite;
+}
+
+.patient .legs {
+  position: absolute;
+  bottom: -34px;
+  left: 10px;
+  width: 24px;
+  height: 10px;
+  border-bottom: 4px solid var(--ink);
+}
+
+.patient .name {
+  font-family: var(--font-title);
+  font-size: 9px;
+}
+
+.patient .bubble {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 3px solid var(--ink);
+  padding: 6px 8px;
+  font-size: 11px;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0 var(--ink);
+  animation: bubble-float 2s ease-in-out infinite;
+  z-index: 7;
+}
+
+.patient .bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 16px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-left: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  transform: rotate(45deg);
+}
+
+.patient .bubble::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--ink);
+  background: #f3ece2;
+}
+
+.patient .bubble-articulation::before {
+  background: #f1b9b9;
+}
+
+.patient .bubble-fluency::before {
+  background: #b7d0d0;
+}
+
+.patient .bubble-voice::before {
+  background: #f4d28c;
+}
+
+.patient .bubble-articulation {
+  border-color: #b66b6b;
+}
+
+.patient .bubble-fluency {
+  border-color: #7f9f9a;
+}
+
+.patient .bubble-voice {
+  border-color: #b7903a;
+}
+
+.patient .patience {
+  width: 70px;
+  height: 10px;
+  border: 2px solid var(--ink);
+  background: #f5f5f5;
+}
+
+.patient .patience-fill {
+  height: 100%;
+  width: 100%;
+  background: var(--accent-2);
+}
+
+.patient.angry {
+  background: #ffe2e2;
+}
+
+.patient.tired {
+  background: #fff5d6;
+}
+
+.patient.drop-target {
+  outline: 3px dashed var(--accent);
+  outline-offset: 2px;
+}
+
+.patient.v1 {
+  animation-duration: 2.2s;
+}
+
+.patient.v2 {
+  animation-duration: 2.8s;
+}
+
+.patient.v3 {
+  animation-duration: 3.2s;
+}
+
+.patient.v2 .arms {
+  animation-duration: 2.2s;
+}
+
+.patient.v3 .avatar::after {
+  animation-duration: 0.7s;
+}
+
+.patient.v1 .avatar::before {
+  animation-duration: 5.5s;
+}
+
+.patient.v2 .body {
+  transform: translateY(1px);
+}
