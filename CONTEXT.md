@@ -33,8 +33,9 @@ svensk målgrupp). Fonts refererade men aldrig laddade (= fallback till monospac
 ## Köra
 
 - `python3 -m http.server 8000` (via .fabrik) och öppna i webbläsaren.
-- Git-repo men ingen live-sida deployad (inga arbetsflöden) — deploy görs i så fall
-  manuellt via `firebase deploy`, men `firebase.json` saknas i repot.
+- Live: https://logopedia-rush.web.app (Firebase-projekt `logopedia-rush`, gratis). Deploy: `firebase deploy`.
+- (Tidigare: ingen live-sida.) Deploy görs
+  manuellt via `firebase deploy`; `firebase.json` och `.firebaserc` finns.
 
 ## Regler
 
