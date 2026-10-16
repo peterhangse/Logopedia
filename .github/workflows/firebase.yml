@@ -1,0 +1,31 @@
+# Publicerar spelet på Firebase (https://logopedia-rush.web.app) vid varje
+# ändring på main. Inloggningen mot Google sker utan nyckel: Google Cloud litar
+# på GitHub för just det här repot (Workload Identity Federation).
+name: Publicera på Firebase
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: firebase
+  cancel-in-progress: false
+
+jobs:
+  publicera:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/13882848786/locations/global/workloadIdentityPools/github/providers/github
+          service_account: github-deploy@logopedia-rush.iam.gserviceaccount.com
+
+      - name: Publicera
+        run: npx --yes firebase-tools@13.29.1 deploy --only hosting --project logopedia-rush --non-interactive
